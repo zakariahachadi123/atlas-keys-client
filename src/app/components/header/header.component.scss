@@ -1,0 +1,21 @@
+.p-inputtext:focus {
+  border-color: transparent; /* Remove border color */
+  box-shadow: none; /* Remove any box shadow */
+  outline: none; /* Remove default outline */
+}
+
+.fixed_menu {
+  background-color:  #191919;
+  position: fixed;
+  top: 0;
+  z-index:999 ;
+}
+
+.p-sidebar {
+    background-color: #191919;
+}
+
+.custom-sidebar .p-sidebar {
+  background-color: #09141f; /* Replace with your desired background color */
+}
+

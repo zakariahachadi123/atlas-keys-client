@@ -1,0 +1,9 @@
+.background-div {
+  width: 100%; /* Set the width of the div */
+  height: 1200px; /* Set the height of the div */
+  background-image: url('../../../assets/imgs/background.jpg'); /* Set the background image */
+  background-color: #1f1f1f;
+  background-size: cover; /* Make sure the image covers the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}

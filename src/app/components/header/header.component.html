@@ -1,0 +1,103 @@
+<!-- menubar-->
+<div style="background-color: #191919;" class="flex flex-column align-items-center  h-10rem w-full  border-bottom-1 border-gray-600">
+  <p-blockUI [blocked]="blockedDocument" />
+  <!-- fixed menu-->
+  <div class="fixed_menu flex justify-content-center w-full h-5rem " style="background-color: #191919;">
+    <div class=" grid h-5rem xl:w-10 w-12  border-sm py-2 ">
+
+      <!--logo container-->
+      <div class="flex justify-content-center  col-2 mt-1   border-round-sm  max-h-full">
+        <a class=" flex flex-row ml-2  w-full h-full">
+          <div> <img src="../../../assets/imgs/brand2.png" class="h-4rem max-w-min "></div>
+          <div class="flex  align-items-center justify-content-start p-2  w-full"> <span
+              class="text-white-400 font-bold">Atlas Keys</span></div>
+        </a>
+
+      </div>
+
+      <!--search bar container-->
+      <div class="flex align-items-center justify-content-center  col-4  ">
+        <div class="w-10 p-2">
+          <p-inputGroup>
+            <input type="text" pInputText placeholder="Keyword" class="w-10" />
+            <button type="button" pButton icon="pi pi-search"
+              class="bg-green-500 hover:bg-green-400 border-green-500"></button>
+          </p-inputGroup>
+        </div>
+      </div>
+
+      <!-- usermenu container-->
+      <div class="flex justify-content-center align-items-center   col-6 py-3">
+        <div class=" grid   h-full w-full   ">
+          <p-menu #menu [model]="items" [popup]="true" />
+          <p-menu #menu2 [model]="items" [popup]="true" />
+           <div class="col-2"></div>
+          <a (click)="menu.toggle($event)" class="col-1  flex flex-row justify-content-center  mr-3">
+            <div class="flex justify-content-center align-items-center mr-1 "><i class="fa fa-globe " style="font-size:18px "></i></div>
+            <div class="flex justify-content-center align-items-center "><span class="hover:text-gray-200"> FR</span>
+            </div>
+            <div class=" flex justify-content-center align-items-center  mb-1 ml-1"><i class="fa fa-sort-desc"></i></div>
+          </a>
+
+          <a (click)="menu.toggle($event)" class=" col-1  flex flex-row justify-content-center ml-2  ">
+            <div class="flex justify-content-center align-items-center mr-1"><i class="fa fa-dollar" style="font-size:18px "></i>
+            </div>
+            <div class="flex justify-content-center align-items-center"><span class="hover:text-gray-200"> USD</span>
+            </div>
+            <div class=" flex justify-content-center align-items-center  mb-1 ml-1"><i class="fa fa-sort-desc"></i>
+            </div>
+          </a>
+          <a class="col-3 flex flex-column justify-content-center  ml-2">
+            <div class=" flex justify-content-center align-items-center mb-1"><i style="font-size:20px "
+                class="fa fa-user-circle-o hover:fa-user-circle"></i></div>
+            <div class=" flex justify-content-center align-items-center"><span class="text-sm block hidden lg:block hover:text-gray-200">
+                Login/Register</span></div>
+          </a>
+          <a class="flex col-4   px-2 justify-content-center align-items-center  ml-2">
+            <div class="flex flex-row  w-11 md:justify-content-center xl:justify-content-end ">
+              <div style="padding: 8px;"
+                class="flex justify-content-center align-items-center bg-green-500 hover:bg-green-600  border-round-left w-3rem  ">
+                <i style="font-size: 1rem" class="pi pi-shopping-cart"></i></div>
+              <p-button label="Panier" (click)="toggleSidebar()"
+                styleClass=" w-full border-green-500 bg-green-500 hover:bg-green-600 border-noround border-round-right "
+                badge="0" badgeClass="px-2 py-1 border-circle " />
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mainmenu -->
+  <div class="relative top-50 flex align-items-end py-2 shadow-2  px-4  xl:w-10 w-full  h-5rem ">
+    <div class="grid w-full  border-round-md shadow-3 " style="background-color: #292929;">
+      <div *ngFor="let item of menuItems" style="padding: 10px;"
+        class="col-2 hover:bg-gray-500 border-gray-600 flex flex-row border-right-1 ">
+
+        <div class="flex justify-content-center align-items-center xl:w-3 lg:w-4 mr-1  "> <i [class]="item.icon"
+            style="font-size: 18px;"></i> </div>
+        <div class="w-7"> <span class="font-bold text-sm "> {{item.name}} </span></div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" position="right" styleClass="custom-sidebar" (onHide)="blockedDocument = false">
+  <ng-template pTemplate="header">
+      <div class="flex align-items-center gap-2">
+          <p-avatar
+              image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+              shape="circle" />
+          <span class="font-bold">
+              Amy Elsner
+          </span>
+      </div>
+  </ng-template>
+  <p>
+      Lorem ipsum dolor sit amet...
+  </p>
+</p-sidebar>
+
+

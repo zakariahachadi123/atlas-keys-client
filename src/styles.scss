@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeflex/themes/primeone-dark.css";
+
+@import "../src/assets/theme.css";
+@import "/node_modules/primeflex/primeflex.css";
+@import "primeflex/themes/primeone-dark.css";
+@import "primeicons/primeicons.css";
+
+
+body {
+  font-size: 15px; /* Adjust this value as needed */
+}
+
+.body-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
